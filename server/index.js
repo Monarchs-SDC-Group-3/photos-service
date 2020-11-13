@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const database = require('../database/index.js');
+const seed = require('../database/seed.js');
 
 const app = express();
 
