@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoDB = 'mongodb://127.0.0.1:27017/';
+const mongoDB = 'mongodb://127.0.0.1:27017/photos';
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
   .catch(err => {
     console.log(err);
@@ -22,12 +22,17 @@ const photosSchema = new Schema({
 const Photos = mongoose.model('photos', photosSchema );
 
 // Create and save an instance of model
-const createPhotos = (data) => {
+const createPhotosDoc = (data) => {
   let doc = new Photos(data);
   doc.save()
     .catch(err => {
       console.log('could not save document', err);
     })
+    .then(() => {
+      console.log('saved entry');
+    })
 };
 
-module.exports.createPhotos = createPhotos;
+// createPhotosDoc({listing_id: 1, url:'url', description:'hi'})
+
+module.exports.createPhotosDoc = createPhotosDoc;

@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
-const database = require('../database/index.js')
+const database = require('../database/index.js');
+const seed = require('../database/seed.js');
 
 const app = express();
 
-const port = 4000;
+const port = 3000;
 const PUB_DIR = path.resolve(__dirname, "..", "public");
 
 app.use(express.static(PUB_DIR));
