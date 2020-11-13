@@ -19,33 +19,7 @@ const photosSchema = new Schema({
   description: String
 });
 
-const listingsSchema = new Schema({
-  name: String,
-  photos: [{type: String}],
-  //or photos: [String]
-});
-
 const Photos = mongoose.model('photos', photosSchema );
 
-const Listings = mongoose.model('listings', listingsSchema );
-
 // Create and save an instance of model
-// photos.create({
-//   listing_id: 'tbd',
-//   url: 'tbd',
-//   description: 'tbd'
-// }, function (err, instance) {
-//   if (err) {
-//     console.log(err);
-//   };
-//   // saved!
-// });
-
-// listings.create({
-//   name: 'tbd',
-//   photos: '[] some array'
-// }, (err, instance) => {
-//   if (err) {
-//     return handleError(err);
-//   }
-// })
+const createPhotos
