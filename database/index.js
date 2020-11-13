@@ -22,4 +22,12 @@ const photosSchema = new Schema({
 const Photos = mongoose.model('photos', photosSchema );
 
 // Create and save an instance of model
-const createPhotos
+const createPhotos = (data) => {
+  let doc = new Photos(data);
+  doc.save()
+    .catch(err => {
+      console.log('could not save document', err);
+    })
+};
+
+module.exports.createPhotos = createPhotos;
