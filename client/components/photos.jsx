@@ -1,10 +1,10 @@
 import React from 'react';
 
-class App extends React.Component {
+class Photos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      photos: []
     }
   }
 
@@ -23,4 +23,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Photos;
