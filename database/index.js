@@ -15,7 +15,7 @@ const Schema = mongoose.Schema;
 
 const photosSchema = new Schema({
   listing_id: Number,
-  url: String,
+  url: [String],
   description: String
 });
 
@@ -33,6 +33,18 @@ const createPhotosDoc = (data) => {
     })
 };
 
+const getPhotos = function(id) {
+  return new Promise((resolve, reject) => {
+    Photos.findOne({listing_id: id}, (err, photos) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(photos);
+      }
+    });
+  });
+};
+
 // createPhotosDoc({listing_id: 1, url:'url', description:'hi'})
 
-module.exports.createPhotosDoc = createPhotosDoc;
+module.exports = {createPhotosDoc, getPhotos};

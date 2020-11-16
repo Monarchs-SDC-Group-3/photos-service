@@ -8,6 +8,14 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+
+  }
+
+  getPhotos() {
+
+  }
+
   render() {
     return (
       <div>THIS IS WORKING NOW</div>
