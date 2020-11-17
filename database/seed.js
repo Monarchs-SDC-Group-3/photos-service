@@ -14,7 +14,8 @@ const seedPhotos = function() {
         description: `${faker.random.words(randomInt())}`
       }
       for (let j = 0; j < 25; j++) {
-        listingData.url.push("https://loremflickr.com/1024/683/interior_design");
+        listingData.url.push(`https://loremflickr.com/1024/683/interior_design?lock=${i+j}&random${j}`
+        )
       }
       db.createPhotosDoc(listingData);
     }

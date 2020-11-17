@@ -1,19 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 import $ from 'jquery';
+import Photo from './photo.jsx';
 
 class Photos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: []
+      photos: [],
+      mainPhotos: []
     }
   }
 
   componentDidMount() {
     console.log('hello component')
     this.getPhotos(Math.floor(Math.random() * 101));
-    console.log(this.state.photos)
   }
 
   getPhotos(id) {
@@ -33,9 +34,13 @@ class Photos extends React.Component {
     };
 
     $.ajax(settings).done((response) => {
-      console.log(response);
+      let basePhotos = [];
+      for (let i = 1; i < 5; i++) {
+        basePhotos.push(response[i]);
+      }
       this.setState({
-        photos: response
+        photos: response,
+        mainPhotos: basePhotos
       })
     });
   }
@@ -43,7 +48,15 @@ class Photos extends React.Component {
   render() {
     return (
       <div>
-        <img src={this.state.photos[0]} />
+        <div>
+          <div>
+            {console.log(this.state.mainPhotos[1])}
+            <img src={this.state.photos[0]} />
+          </div>
+          {this.state.mainPhotos.map(photo =>
+            <Photo photo={photo} key={photo}/>
+          )}
+        </div>
       </div>
     )
   }
