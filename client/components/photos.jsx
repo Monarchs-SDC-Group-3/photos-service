@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import $ from 'jquery';
 import Photo from './photo.jsx';
+import './styles/App.css'
 
 class Photos extends React.Component {
   constructor(props) {
@@ -47,10 +48,9 @@ class Photos extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="container">
         <div>
           <div>
-            {console.log(this.state.mainPhotos[1])}
             <img src={this.state.photos[0]} />
           </div>
           {this.state.mainPhotos.map(photo =>
