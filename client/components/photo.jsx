@@ -8,11 +8,11 @@ const Photo = (props) => {
     return (
       <div className={`gallery-item gallery-item-${count}`}>
         <img src={props.photo} alt="" className="gallery-img"/>
-        <a id="carousel-btn" href="$">See All Photos</a>
+        <a id="carousel-btn" onClick={() => props.changeView('all-photos')}>See All Photos</a>
       </div>
     )
   }
-  return(
+  return (
     <div className={`gallery-item gallery-item-${count}`}>
       <img src={props.photo} className="gallery-img"/>
     </div>

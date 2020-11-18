@@ -1,12 +1,15 @@
 .container {
+  display: block;
 }
 
 .gallery {
+  max-width: 1128px;
+  max-height: 528px;
   margin: 20px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 5vw);
-  grid-gap: 8px;
+  grid-template-rows: repeat(8, 60px);
+  gap: 8px;
   /* grid-auto-rows: minmax(150px, 450px);
   grid-auto-columns: minmax(100px, 300px); */
 }
@@ -20,6 +23,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .gallery-item-1 {

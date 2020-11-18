@@ -2,8 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import $ from 'jquery';
 import Photo from './photo.jsx';
+import AllPhotos from './allPhotos.jsx';
 import './styles/main.css';
-import './styles/modal.css';
+import './styles/allPhotos.css';
 
 class Photos extends React.Component {
   constructor(props) {
@@ -13,7 +14,9 @@ class Photos extends React.Component {
       mainPhotos: [],
       view: 'main'
     };
-    this.displayAll.bind(this);
+    this.displayAll = this.displayAll.bind(this);
+    this.displayCarousel = this.displayCarousel.bind(this);
+    this.changeView = this.changeView.bind(this);
   }
 
   componentDidMount() {
@@ -49,31 +52,41 @@ class Photos extends React.Component {
     });
   }
 
+  changeView(change) {
+    this.setState({
+      view: change
+    });
+  }
+
   displayAll() {
     this.setState({
       view: 'all-photos'
-    })
+    });
+  }
+
+  displayCarousel() {
+    this.setState({
+      view: 'carousel'
+    });
   }
 
   render() {
+
     return (
-      <div className="container">
-        <div className="gallery">
-          {/* <div id="main-photo">
-            <img src={this.state.photos[0]} />
-          </div> */}
-          {this.state.mainPhotos.map(photo =>
-            <Photo photo={photo} key={photo}/>
-          )}
-        </div>
-        <div id="carousel-modal" className="modal">
-          <div className="modal-content">
-            <span className="close"></span>
-            <img src={this.state.photos[0]} alt="interior photo"/>
-            <p>INSERT DESCRIPTION</p>
+      <div>
+        <div id="container">
+          <div className="gallery">
+            {/* <div id="main-photo">
+              <img src={this.state.photos[0]} />
+            </div> */}
+            {this.state.mainPhotos.map(photo =>
+              <Photo photo={photo} key={photo} changeView={this.changeView}/>
+            )}
           </div>
         </div>
+        <AllPhotos view={this.state.view} photos={this.state.photos}/>
       </div>
+
     )
   }
 }
