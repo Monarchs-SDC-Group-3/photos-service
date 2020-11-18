@@ -1,8 +1,9 @@
-.container {
-  display: block;
+#container {
+  display: grid;
+  justify-content: center;
 }
 
-.gallery {
+#gallery {
   max-width: 1128px;
   max-height: 528px;
   margin: 20px;

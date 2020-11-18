@@ -5,6 +5,8 @@ import Photo from './photo.jsx';
 import AllPhotos from './allPhotos.jsx';
 import './styles/main.css';
 import './styles/allPhotos.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 class Photos extends React.Component {
   constructor(props) {
@@ -14,8 +16,6 @@ class Photos extends React.Component {
       mainPhotos: [],
       view: 'main'
     };
-    this.displayAll = this.displayAll.bind(this);
-    this.displayCarousel = this.displayCarousel.bind(this);
     this.changeView = this.changeView.bind(this);
   }
 
@@ -58,36 +58,46 @@ class Photos extends React.Component {
     });
   }
 
-  displayAll() {
-    this.setState({
-      view: 'all-photos'
-    });
-  }
-
-  displayCarousel() {
-    this.setState({
-      view: 'carousel'
-    });
-  }
-
   render() {
+    let { view, photos } = this.state;
 
-    return (
-      <div>
-        <div id="container">
-          <div className="gallery">
-            {/* <div id="main-photo">
-              <img src={this.state.photos[0]} />
-            </div> */}
-            {this.state.mainPhotos.map(photo =>
-              <Photo photo={photo} key={photo} changeView={this.changeView}/>
-            )}
+    if (view === 'main') {
+      return(
+        <div>
+          <div id="container">
+            <div>
+              <Photo photos={photos} changeView={this.changeView}/>
+            </div>
           </div>
         </div>
-        <AllPhotos view={this.state.view} photos={this.state.photos}/>
-      </div>
-
-    )
+      )
+    } else if (view === 'all-photos') {
+      return(
+        <div>
+          <div id="container">
+            <span className="back" onClick={() => this.changeView('main')}>
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </span>
+            <div id="modal">
+              <AllPhotos view={view} photos={photos} changeView={this.changeView} />
+            </div>
+          </div>
+        </div>
+      )
+    } else if (view === 'carousel') {
+      return (
+        <div>
+          <div id="container">
+            <span className="close" onClick={() => this.changeView('main')}>
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </span>
+            <div id="modal">
+              <AllPhotos view={view} photos={photos} changeView={this.changeView} />
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
