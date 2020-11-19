@@ -9,7 +9,7 @@ const AllPhotos = (props) => {
   return (
     <div className="modal-content">
       {photos.map(photo =>
-        <AllPhoto photo={photo} key={photo}/>
+        <AllPhoto photo={photo} key={photo} changeView={changeView} />
       )}
     </div>
   )

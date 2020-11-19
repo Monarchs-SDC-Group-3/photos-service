@@ -3,6 +3,7 @@ import axios from 'axios';
 import $ from 'jquery';
 import Photo from './photo.jsx';
 import AllPhotos from './allPhotos.jsx';
+import Carousel from './carousel.jsx';
 import './styles/main.css';
 import './styles/allPhotos.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -62,7 +63,7 @@ class Photos extends React.Component {
     let { view, photos } = this.state;
 
     if (view === 'main') {
-      return(
+      return (
         <div>
           <div id="container">
             <div>
@@ -72,27 +73,26 @@ class Photos extends React.Component {
         </div>
       )
     } else if (view === 'all-photos') {
-      return(
-        <div>
-          <div id="container">
-            <span className="back" onClick={() => this.changeView('main')}>
-              <FontAwesomeIcon icon={faAngleLeft} />
-            </span>
-            <div id="modal">
-              <AllPhotos view={view} photos={photos} changeView={this.changeView} />
-            </div>
-          </div>
+      return (
+      <div id="container">
+        <span className="back" onClick={() => this.changeView('main')}>
+          <FontAwesomeIcon icon={faAngleLeft} />
+        </span>
+        <div id="modal">
+          <AllPhotos view={view} photos={photos} changeView={this.changeView} />
         </div>
+      </div>
       )
     } else if (view === 'carousel') {
       return (
         <div>
           <div id="container">
-            <span className="close" onClick={() => this.changeView('main')}>
-              <FontAwesomeIcon icon={faAngleLeft} />
+            <span >
+              <FontAwesomeIcon icon={faAngleLeft} className="close" onClick={() => this.changeView('main')}/>
+              <a id="all-photos-btn" onClick={() => {this.changeView("all-photos")}}>See All Photos</a>
             </span>
-            <div id="modal">
-              <AllPhotos view={view} photos={photos} changeView={this.changeView} />
+            <div id="carousel">
+              <Carousel view={view} photos={photos} changeView={this.changeView} />
             </div>
           </div>
         </div>
