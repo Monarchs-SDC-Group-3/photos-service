@@ -1,6 +1,41 @@
 #container {
   display: grid;
   justify-content: center;
+  align-items: center;
+}
+
+#heading {
+  margin-left: 23px;
+}
+
+h1 {
+  font-family: Helvetica Neue,sans-serif;
+  font-weight: 570;
+  color: #222222;
+}
+
+#main-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-left: 23px;
+  margin-right: 23px;
+  margin-bottom: 10px;
+  color: #717171;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;;
+}
+
+#address {
+  text-decoration: underline;
+}
+
+#main-share {
+  margin: 10px;
+}
+
+#main-heart {
+  margin: 10px;
 }
 
 #gallery {
@@ -82,5 +117,5 @@
   font-size: 14px;
   width: auto;
   height: auto;
-  }
+}
 

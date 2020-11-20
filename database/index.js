@@ -15,8 +15,7 @@ const Schema = mongoose.Schema;
 
 const photosSchema = new Schema({
   listing_id: Number,
-  url: [String],
-  description: String
+  photos: [Object],
 });
 
 const Photos = mongoose.model('photos', photosSchema );

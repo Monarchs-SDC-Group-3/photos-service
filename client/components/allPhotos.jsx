@@ -7,7 +7,11 @@ const AllPhotos = (props) => {
   let { photos, view, changeView} = props;
 
   return (
-      <AllPhoto photos={photos} changeView={changeView} />
+    <div className="modal">
+      {photos.map(photo =>
+        <AllPhoto photo={photo} key={photo.key} changeView={changeView} />
+      )}
+    </div>
   )
 }
 

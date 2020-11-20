@@ -1,0 +1,106 @@
+.carousel-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+}
+
+#footer {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 12;
+}
+
+#carousel {
+  grid-column: 1 / span 12;
+  grid-row: 2 / span 1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+  margin: 20px;
+}
+
+#back-arrow {
+  border: 1px solid lightgray;
+  padding: 8px 13px 7px 11px;
+  border-radius: 50%;
+  grid-column: 1 / span 1;
+}
+
+#next-arrow {
+  border: 1px solid lightgray;
+  padding: 8px 11px 7px 13px;
+  border-radius: 50%;
+  grid-column: 12 / span 1;
+}
+
+#carousel-card {
+  grid-column: 3 / span 8;
+}
+
+#header {
+  width: 100%;
+  grid-column: 1 / span 12;
+  grid-row: 1 / span 1;
+  display: flex;
+  /* grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: auto; */
+  margin-top: 40px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+
+#tracker {
+  /* grid-column: 6 / span 1; */
+  justify-self: center;
+}
+
+#nav-buttons {
+  /* grid-column: 1 / span 1; */
+}
+
+#close {
+  background-color: rgba(232, 232, 232, 1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 5px;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+#all-photos-btn {
+  width: fit-content;
+  height: max-content;
+  white-space: nowrap;
+  padding: 8px 16px;
+  border: black solid 1px;
+  border-radius: 8px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#icons {
+  /* grid-column: 11 / span 1; */
+}
+
+#share {
+  margin: 10px;
+  color: gray;
+}
+
+#heart {
+  margin: 10px;
+  color: gray;
+}

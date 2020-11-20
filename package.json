@@ -30,7 +30,8 @@
     "lodash": "^4.17.20",
     "netstat": "0.0.2",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "^16.8.0",
+    "react-responsive-carousel": "^3.2.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -54,6 +55,9 @@
     "verbose": true,
     "setupFilesAfterEnv": [
       "./setupTests.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMocks.js"
+    }
   }
 }
