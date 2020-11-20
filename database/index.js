@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const mongoDB = 'mongodb://127.0.0.1:27017/photos';
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
   .catch(err => {
-    console.log(err);
+    console.log(err, 'is this the error?');
   })
 
 const db = mongoose.connection;
@@ -15,8 +15,7 @@ const Schema = mongoose.Schema;
 
 const photosSchema = new Schema({
   listing_id: Number,
-  url: [String],
-  description: String
+  photos: [Object],
 });
 
 const Photos = mongoose.model('photos', photosSchema );

@@ -1,0 +1,121 @@
+#container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#heading {
+  margin-left: 23px;
+}
+
+h1 {
+  font-family: Helvetica Neue,sans-serif;
+  font-weight: 570;
+  color: #222222;
+}
+
+#main-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-left: 23px;
+  margin-right: 23px;
+  margin-bottom: 10px;
+  color: #717171;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;;
+}
+
+#address {
+  text-decoration: underline;
+}
+
+#main-share {
+  margin: 10px;
+}
+
+#main-heart {
+  margin: 10px;
+}
+
+#gallery {
+  max-width: 1128px;
+  max-height: 528px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 60px);
+  gap: 8px;
+  /* grid-auto-rows: minmax(150px, 450px);
+  grid-auto-columns: minmax(100px, 300px); */
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.gallery-item-1 {
+  border-radius: 10px 0px 0px 10px;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 9;
+}
+
+.gallery-item-2 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.gallery-item-3 {
+  border-radius: 0px 10px 0px 0px;
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.gallery-item-4 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+
+.gallery-item-5 {
+  border-radius: 0px 0px 10px 0px;
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+
+.gallery-item a {
+  cursor: pointer;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 8px;
+  padding:7px 15px;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  border-color: rgb(34, 34, 34);
+  background: rgb(255, 255, 255);
+  color: rgb(34, 34, 34);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  width: auto;
+  height: auto;
+}
+
