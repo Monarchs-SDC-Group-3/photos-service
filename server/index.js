@@ -10,7 +10,7 @@ const PUB_DIR = path.resolve(__dirname, "..", "public");
 app.use(express.static(PUB_DIR));
 
 app.get('/api/homes/:id/photos', (req, res) => {
-  db.getPhotos(req.params.listing_id)
+  db.getPhotos(req.params.id)
     .then((listing) => {
       res.send(listing.photos);
     })

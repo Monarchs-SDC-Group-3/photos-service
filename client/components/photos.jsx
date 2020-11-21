@@ -37,17 +37,6 @@ class Photos extends React.Component {
       .catch((err) => {
         console.log(err, 'it got here');
       })
-    // var settings = {
-    //   "url": `http://localhost:3000/api/photos/${id}`,
-    //   "method": "GET",
-    //   "timeout": 0,
-    // };
-
-    // $.ajax(settings).done((response) => {
-    //   this.setState({
-    //     photos: response,
-    //   })
-    // });
   }
 
   changeView(change) {

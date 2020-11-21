@@ -17,7 +17,7 @@ const seedPhotos = function() {
     }
     for (let j = 0; j < 25; j++) {
       listingData.photos.push({
-        url: `https://fecphotosphotos.s3-us-west-2.amazonaws.com/images/${padNum(count, 4)}.jpg`,
+        url: `https://fecphotosphoto.s3-us-west-2.amazonaws.com/images/${padNum(count, 4)}.jpg`,
         key: j + 1,
         description: `${faker.random.words(randomInt())}`
       });
