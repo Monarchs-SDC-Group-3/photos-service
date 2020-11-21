@@ -23,7 +23,7 @@ class Photos extends React.Component {
 
   componentDidMount() {
     console.log('hello component')
-    this.getPhotos(Math.floor(Math.random() * 101));
+    this.getPhotos(window.location.pathName);
   }
 
   getPhotos(id) {
