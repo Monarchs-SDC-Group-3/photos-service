@@ -1,3 +1,5 @@
 node_modules
 public/bundle.js
 __snapshots__/
+*.pem
+*.sh

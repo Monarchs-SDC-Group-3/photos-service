@@ -22,8 +22,7 @@ class Photos extends React.Component {
   }
 
   componentDidMount() {
-    console.log('hello component')
-    this.getPhotos(window.location.pathName);
+    this.getPhotos(window.location.pathname);
   }
 
   getPhotos(id) {
