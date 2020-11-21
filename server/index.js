@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const db = require('../database/index.js');
-const seed = require('../database/seed.js');
 
 const app = express();
 
@@ -10,7 +9,7 @@ const PUB_DIR = path.resolve(__dirname, "..", "public");
 
 app.use(express.static(PUB_DIR));
 
-app.get('/api/photos/:listing_id', (req, res) => {
+app.get('/api/homes/:id/photos', (req, res) => {
   db.getPhotos(req.params.listing_id)
     .then((listing) => {
       res.send(listing.photos);
