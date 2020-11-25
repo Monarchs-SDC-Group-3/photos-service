@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 const PUB_DIR = path.resolve(__dirname, "..", "public");
 
-app.use('/:id',express.static(PUB_DIR));
+app.use(express.static(PUB_DIR));
 
 app.get('/api/homes/:id/photos', (req, res) => {
   db.getPhotos(req.params.id)
