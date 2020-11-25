@@ -12,6 +12,7 @@ app.use(express.static(PUB_DIR));
 app.get('/api/homes/:id/photos', (req, res) => {
   db.getPhotos(req.params.id)
     .then((listing) => {
+      console.log('success');
       res.send(listing.photos);
     })
     .catch((err) => {
