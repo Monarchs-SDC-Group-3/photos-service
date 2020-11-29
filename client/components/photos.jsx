@@ -22,7 +22,7 @@ class Photos extends React.Component {
   }
 
   componentDidMount() {
-    this.getPhotos(5);
+    this.getPhotos(window.location.pathname.slice(1, window.location.pathname.length -1));
   }
 
   getPhotos(id) {
@@ -56,17 +56,17 @@ class Photos extends React.Component {
       if (view === 'main') {
         return (
           <div>
-            <div id="container">
-              <div id="heading">
+            <div id="photos-container">
+              <div id="photos-heading">
                 <h1>Little House on the Prairie</h1>
               </div>
-              <div id="main-icons">
-                <span id="address">That One Town, In a Region, Of a Country</span>
+              <div id="photos-main-icons">
+                <span id="photos-address">That One Town, In a Region, Of a Country</span>
                 <div>
-                  <span id="main-share">
+                  <span id="photos-main-share">
                     <FontAwesomeIcon icon={faExternalLinkAlt} /> Share
                   </span>
-                  <span id="main-heart">
+                  <span id="photos-main-heart">
                     <FontAwesomeIcon icon={faHeart} /> Like
                   </span>
                 </div>
@@ -79,8 +79,8 @@ class Photos extends React.Component {
         )
       } else if (view === 'all-photos') {
         return (
-        <div id="container">
-          <span className="back" onClick={() => this.changeView('main')}>
+        <div id="photos-container">
+          <span className="photos-back" onClick={() => this.changeView('main')}>
             <FontAwesomeIcon icon={faAngleLeft} />
           </span>
           <AllPhotos view={view} photos={photos} changeView={this.changeView} />

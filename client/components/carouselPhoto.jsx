@@ -7,8 +7,8 @@ const CarouselPhoto = (props) => {
   let slideIndex = 1;
 
   return(
-    <div id="carousel-card">
-      <img className='carousel-img' src={photos[index].url} alt="carousel-photo"/>
+    <div id="photos-carousel-card">
+      <img className='photos-carousel-img' src={photos[index].url} alt="carousel-photo"/>
     </div>
   )
 }

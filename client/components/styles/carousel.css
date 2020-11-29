@@ -1,16 +1,16 @@
-.carousel-container {
+.photos-carousel-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   justify-items: center;
 }
 
-#footer {
+#photos-footer {
   grid-row: 3 / span 1;
   grid-column: 1 / span 12;
 }
 
-#carousel {
+#photos-carousel {
   grid-column: 1 / span 12;
   grid-row: 2 / span 1;
   display: grid;
@@ -21,25 +21,25 @@
   margin: 20px;
 }
 
-#back-arrow {
+#photos-back-arrow {
   border: 1px solid lightgray;
   padding: 8px 13px 7px 11px;
   border-radius: 50%;
   grid-column: 1 / span 1;
 }
 
-#next-arrow {
+#photos-next-arrow {
   border: 1px solid lightgray;
   padding: 8px 11px 7px 13px;
   border-radius: 50%;
   grid-column: 12 / span 1;
 }
 
-#carousel-card {
+#photos-carousel-card {
   grid-column: 3 / span 8;
 }
 
-#header {
+#photos-header {
   width: 100%;
   grid-column: 1 / span 12;
   grid-row: 1 / span 1;
@@ -53,16 +53,16 @@
   white-space: nowrap;
 }
 
-#tracker {
+#photos-tracker {
   /* grid-column: 6 / span 1; */
   justify-self: center;
 }
 
-#nav-buttons {
+#photos-nav-buttons {
   /* grid-column: 1 / span 1; */
 }
 
-#close {
+#photos-close {
   background-color: rgba(232, 232, 232, 1);
   padding: 8px 16px;
   border-radius: 8px;
@@ -76,7 +76,7 @@
   white-space: nowrap;
 }
 
-#all-photos-btn {
+#photos-all-photos-btn {
   width: fit-content;
   height: max-content;
   white-space: nowrap;
@@ -91,16 +91,16 @@
   margin: 5px;
 }
 
-#icons {
+#photos-icons {
   /* grid-column: 11 / span 1; */
 }
 
-#share {
+#photos-share {
   margin: 10px;
   color: gray;
 }
 
-#heart {
+#photos-heart {
   margin: 10px;
   color: gray;
 }

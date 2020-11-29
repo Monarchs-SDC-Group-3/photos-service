@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './client/index.jsx',
   output: {
     path: path.resolve(__dirname, 'public'),
