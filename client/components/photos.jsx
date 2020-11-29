@@ -28,7 +28,6 @@ class Photos extends React.Component {
   getPhotos(id) {
     axios.get(`http://localhost:3000/api/homes/${id}/photos`)
       .then((response) => {
-        console.log('it works')
         this.setState({
           photos: response.data
         })

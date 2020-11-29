@@ -4,7 +4,6 @@ import { faGripVertical } from '@fortawesome/free-solid-svg-icons';
 
 const Photo = (props) => {
   let { photos, changeView } = props;
-  console.log(props.photos)
 
   return (
     <div id="photos-gallery">
