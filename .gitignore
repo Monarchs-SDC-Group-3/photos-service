@@ -3,3 +3,6 @@ public/bundle.js
 __snapshots__/
 *.pem
 *.sh
+images
+imageDownloader.js
+public/bundle.js.LICENSE.txt
