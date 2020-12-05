@@ -6,21 +6,24 @@ const lines = argv.lines || 1000000;
 const filename = argv.output || 'listings.csv';
 const stream = fs.createWriteStream(filename);
 
-const picNum = () => padNum(Math.ceil(Math.random() * 1000), 4);
-const randomInt = () => Math.ceil(Math.random() * 10);
-const padNum = (number, size) => {
+const picNum = () => `0000${Math.ceil(Math.random() * 1000)}`.substr(-4, 4);
+const randomInt = () => Math.ceil(Math.random() * 8);
+const padNum = (number) => {
   const result = `0000${number}`;
   return result.substr(-size);
 }
 
 const createListing = (i, j) => {
+  // set counter to equal randomInt
   const listing_id = i;
   const url = `https://repairbnbphotos.s3-us-west-2.amazonaws.com/images/${picNum()}.jpg`;
   const key = j;
-  const description = `${faker.random.words(randomInt())}`;
+  const description = `${faker.commerce.productDescription()}`;
 
-  return `${listing_id},${url},${key},${description}\n`;
+  return `${listing_id}|${url}|${key}|${description}\n`;
 }
+
+// const generateRandInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const startWriting = (writeStream, encoding, done) => {
   let i = -1;
@@ -61,16 +64,7 @@ startWriting(stream, 'utf-8', () => {
   stream.end();
 })
 
-
-
-
-
-
-
-
-
-
-// SEEDS CORRECTLY, BUT SLOWLY
+// SEEDS CORRECTLY, BUT NOT FOR LARGE FILES
 // for (let i = 1; i < 10; i++) {
 //   const rando = Math.floor(Math.random() * 5) + 5;
   // for (let j = 1; j < rando; j++) {
