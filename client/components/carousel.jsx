@@ -81,7 +81,7 @@ class Carousel extends React.Component {
             </div>
         </div>
         <div id="photos-footer">
-          <span id="photos-description">{photos.[currentIndex].description}</span>
+          <span id="photos-description">{photos.[currentIndex].listing_description}</span>
         </div>
       </div>
     )
