@@ -16,11 +16,11 @@ const padNum = (number) => {
 const createListing = (i, j) => {
   // set counter to equal randomInt
   const listing_id = i;
-  const url = `https://repairbnbphotos.s3-us-west-2.amazonaws.com/images/${picNum()}.jpg`;
-  const key = j;
-  const description = `${faker.commerce.productDescription()}`;
+  const listing_url = `https://repairbnbphotos.s3-us-west-2.amazonaws.com/images/${picNum()}.jpg`;
+  const listing_key = j;
+  const listing_description = `${faker.commerce.productDescription()}`;
 
-  return `${listing_id}|${url}|${key}|${description}\n`;
+  return `${listing_id}|${listing_url}|${listing_key}|${listing_description}\n`;
 }
 
 // const generateRandInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -58,7 +58,7 @@ const startWriting = (writeStream, encoding, done) => {
 }
 
 // write our `header` line before invoking the loop
-stream.write(`listing_id,url,key,description\n`, 'utf-8');
+stream.write(`listing_id,listing_url,listing_key,listing_description\n`, 'utf-8');
 //invoke startWriting and pass callback
 startWriting(stream, 'utf-8', () => {
   stream.end();

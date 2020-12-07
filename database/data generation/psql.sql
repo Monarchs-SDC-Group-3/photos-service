@@ -10,7 +10,7 @@ CREATE DATABASE photos;
 -- Create items table
 CREATE TABLE listings (
   listing_id INT,
-  url VARCHAR,
-  key INT,
-  description VARCHAR
+  listing_url VARCHAR,
+  listing_key INT,
+  listing_description VARCHAR
 );
