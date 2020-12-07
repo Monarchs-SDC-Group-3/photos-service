@@ -8,7 +8,7 @@ const CarouselPhoto = (props) => {
 
   return(
     <div id="photos-carousel-card">
-      <img className='photos-carousel-img' src={photos[index].url} alt="carousel-photo"/>
+      <img className='photos-carousel-img' src={photos[index].listing_url} alt="carousel-photo"/>
     </div>
   )
 }
