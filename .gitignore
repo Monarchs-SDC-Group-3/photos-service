@@ -6,3 +6,7 @@ __snapshots__/
 images
 imageDownloader.js
 public/bundle.js.LICENSE.txt
+*.csv
+test.js
+oldIndex.js
+*.DS_Store

@@ -22,7 +22,7 @@ class Carousel extends React.Component {
 
   goToPrevious() {
     let index = this.state.currentIndex;
-    let length = 25;
+    let length = this.props.photos.length;
      if (index < 1) {
        index = length  - 1;
      } else {
@@ -35,8 +35,8 @@ class Carousel extends React.Component {
 
   goToNext() {
     let index = this.state.currentIndex;
-    let length = 25;
-     if (index === 24) {
+    let length = this.props.photos.length;
+     if (index === this.props.photos.length - 1) {
        index = 0;
      } else {
        index++;
@@ -61,7 +61,7 @@ class Carousel extends React.Component {
                 <FontAwesomeIcon icon={faGripVertical} />
               </span> See All Photos</a>
           </div>
-          <span id="photos-tracker"><h3>{currentIndex + 1} / 25</h3></span>
+          <span id="photos-tracker"><h3>{currentIndex + 1} / {photos.length}</h3></span>
           <div id="photos-icons">
             <span id="photos-share">
               <FontAwesomeIcon icon={faExternalLinkAlt} />
