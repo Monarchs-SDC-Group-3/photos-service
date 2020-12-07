@@ -23,8 +23,6 @@ const createListing = (i, j) => {
   return `${listing_id}|${listing_url}|${listing_key}|${listing_description}\n`;
 }
 
-// const generateRandInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 const startWriting = (writeStream, encoding, done) => {
   let i = -1;
   function writing() {
