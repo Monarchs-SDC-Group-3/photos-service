@@ -10,3 +10,5 @@ public/bundle.js.LICENSE.txt
 test.js
 oldIndex.js
 *.DS_Store
+*.jsonl
+arangoSeeder.js
