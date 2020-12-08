@@ -14,3 +14,11 @@ CREATE TABLE listings (
   listing_key INT,
   listing_description VARCHAR
 );
+
+
+/*
+CREATE TABLE listings (
+  listing_id INT,
+  photos integer ARRAY
+)
+*/

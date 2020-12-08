@@ -31,6 +31,11 @@ const startWriting = (writeStream, encoding, done) => {
       i++;
       // check if i === lines so we would write and call 'done'
       if (i === lines) {
+        let rando = Math.floor(Math.random() * 4) + 5;
+        for (let k = 1; k <= rando; k++) {
+          let listing = createListing(i + 1, k);
+          canWrite = writeStream.write(listing, encoding);
+        }
         let listing = createListing(i + 1, 1);
         // we are done so fire callback
         writeStream.write(listing, encoding, done);
