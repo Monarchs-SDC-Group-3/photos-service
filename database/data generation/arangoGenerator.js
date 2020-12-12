@@ -38,7 +38,7 @@ const createListing = (i) => {
     let photo = {
       listing_key: k,
       listing_url: `https://repairbnbphotos.s3-us-west-2.amazonaws.com/images/${picNum()}.jpg`,
-      listing_description: `${faker.commerce.productDescription()}`
+      listing_description: `${faker.lorem.sentence()}`
     };
     // push to newObj.photos
     newListing.photos.push(photo);
@@ -49,7 +49,7 @@ const createListing = (i) => {
   // const listing_description = `${faker.commerce.productDescription()}`;
 
   // return `${listing_id}|${listing_url}|${listing_key}|${listing_description}\n`;
-  return JSON.stringify(newListing) + '\n';
+  return `${JSON.stringify(newListing)}\n`;
 }
 
 const startWriting = (writeStream, encoding, done) => {
