@@ -1,25 +1,10 @@
-const { Pool } = require('pg');
+const Arango = require('arangojs').Database;
+// const { aql } = require('arangojs');
+const { username, password, database } = require('./config.js');
 
-const db = new Pool({
-  user: 'loganrosenlund',
-  password: 'password',
-  host: 'localhost',
-  database: 'photos',
-  port: 5432,
-});
+const arangoURI = 'http://127.0.0.1:8529';
+const db = new Arango(arangoURI);
+db.useDatabase(database);
+db.useBasicAuth(username, password);
 
-// const getItem = (request, response) => {
-//   const id = request;
-
-//   pool.query('SELECT * FROM listings WHERE listing_id = $1', [id], (err, results) => {
-//     if (err) {
-//       throw err;
-//     }
-//     console.log(results.rows);
-//     response.status(200).json(results.rows);
-//   })
-// }
-
-module.exports = {
-  db
-};
+module.exports = db;
