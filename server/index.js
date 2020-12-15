@@ -1,33 +1,66 @@
+require('newrelic');
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const path = require('path');
 const db = require('../database/index.js');
-const { getPhotos } = require('./getPhotos');
+// const { getPhotos } = require('./getPhotos');
+// const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 const PUB_DIR = path.resolve(__dirname, "..", "public");
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
+// app.use(bodyParser.json());
 app.use('/:id', express.static(PUB_DIR));
 
-// QUERYING POSTGRES
+// QUERYING ARANGODB
 app.get('/api/homes/:id/photos', async (req, res) => {
-  let { id } = req.params;
-
-  console.log(`Item id is: ${id}`);
+  const { id } = req.params;
 
   try {
-    const photos = await getPhotos(id);
-    console.log(photos)
+    const listing = await db.query(`FOR a IN photos FILTER a.listing_id == ${id} RETURN a.photos`);
+    const photos = await listing.all();
     res.send(photos);
   } catch (err) {
     console.log(`Error: ${err}`);
     res.sendStatus(500);
   }
 
-})
+});
+
+// QUERYING ARANGODB
+// app.get('/api/homes/:id/photos', (req, res) => {
+//   const { id } = req.params;
+//   // console.log(`id is: ${id}`);
+//   db.query(`FOR a IN photos FILTER a.listing_id == ${id} RETURN a.photos`)
+//     .then(result => result.all())
+//     .then((result) => {
+//       res.send(result);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.sendStatus(500);
+//     });
+// })
+
+// QUERYING POSTGRES
+// app.get('/api/homes/:id/photos', async (req, res) => {
+//   let { id } = req.params;
+
+//   console.log(`Item id is: ${id}`);
+
+//   try {
+//     const photos = await getPhotos(id);
+//     console.log(photos)
+//     res.send(photos);
+//   } catch (err) {
+//     console.log(`Error: ${err}`);
+//     res.sendStatus(500);
+//   }
+
+// })
 
 // QUERYING MONGO
 // app.get('/api/homes/:id/photos', (req, res) => {
